@@ -1,14 +1,15 @@
 import { Productos } from "../types/productos"
+import Image from "next/image"
 
-export const carros: Productos[] = [
+export const laptop: Productos[] = [
   {
     id: 1,
-    titulo: "Carro de nueva generación",
-    precio: 1000,
-    urlImage: "",
-    categoria: "",
-    descripcion: "",
-    cantidad: 10
+    titulo: "Porsche 911",
+    precio: 100000,
+    urlImage: "https://s1.cdn.autoevolution.com/images/gallery/PORSCHE-911-Carrera-GTS-5309_6.jpg",
+    categoria: "Deportivo",
+    descripcion: "El porsche 911 es un automóvil deportivo de lujo que ha pasado varias generaciones desde 1964",
+   
 
   },
   {
@@ -18,7 +19,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -28,7 +29,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -38,7 +39,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -48,7 +49,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -58,7 +59,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -68,7 +69,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -78,7 +79,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -88,7 +89,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -98,7 +99,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -108,7 +109,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -118,7 +119,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+   
 
   },
   {
@@ -128,7 +129,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+   
 
   },
   {
@@ -138,7 +139,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -148,7 +149,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+   
 
   },
   {
@@ -158,7 +159,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+   
 
   },
   {
@@ -168,7 +169,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -178,7 +179,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
   {
@@ -188,7 +189,7 @@ export const carros: Productos[] = [
     urlImage: "",
     categoria: "",
     descripcion: "",
-    cantidad: 10
+    
 
   },
 
