@@ -1,4 +1,4 @@
-import { Productos } from "@/types/productos" 
+import { Productos } from "../types/productos"
 
 export const carros: Productos[] = [
   {
