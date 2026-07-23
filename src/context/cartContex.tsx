@@ -28,7 +28,7 @@ const menuVacio = createContext<menuOpciones | undefined>(undefined);
 
 //La selección de productos cuando hay un proveedor para poder usarlos en el Navbar
 //y compartir los datos del carrito
-export function  proveedorCarrito ({children}: {children: ReactNode}){
+export function  ProveedorCarrito ({children}: {children: ReactNode}){
  const [cartas, setCartas] = useState<carritoItem[]>([]);
  const [actualizar, setActualizar] = useState(false);
  //usar LocalStorage para mantener el carrito al refrescar la pagina 

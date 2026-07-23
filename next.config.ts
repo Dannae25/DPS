@@ -6,7 +6,22 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "s1.cdn.autoevolution.com",
+        hostname: "www.rafenlinea.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.officedepot.com.sv",
+
+      },
+       {
+        protocol: "https",
+        hostname: "tiendaintelmax.net",
+
+      },
+       {
+        protocol: "https",
+        hostname: "rossellimac.es",
+
       },
     ],
   },
