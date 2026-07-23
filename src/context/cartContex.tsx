@@ -18,7 +18,7 @@ interface menuOpciones {
     restarCantidad: (id: number) => void;
     eliminarProducto: (id: number) => void;
     limpiarCarrito: () => void;
-    total: number;
+    totalPrecio: number;
     totalCarrito: number;
 }
 
@@ -35,7 +35,7 @@ export function  ProveedorCarrito ({children}: {children: ReactNode}){
  useEffect(() => {
     const conservarCambios = localStorage.getItem(CartStorageKey);
     if(conservarCambios){
-        setActualizar(JSON.parse(conservarCambios));
+        setCartas(JSON.parse(conservarCambios)); //lo que mantiene que el carrito siga intacto al momento de refrescar
 
     }
     setActualizar(true);
@@ -101,7 +101,7 @@ function restarCantidad(id: number){
     }
 
     //VALORES MATEMÁTICOS CALCULADOS A PARTIR DEL CARRITO
-    const total = cartas.reduce((suma, elemento) => suma + elemento.precio * elemento.cantidad, 0);
+    const totalPrecio = cartas.reduce((suma, elemento) => suma + elemento.precio * elemento.cantidad, 0);
     const totalCarrito = cartas.reduce((suma, elemento) => suma + elemento.cantidad, 0 );
 
     return (
@@ -113,7 +113,7 @@ function restarCantidad(id: number){
           restarCantidad,
           eliminarProducto,
           limpiarCarrito,
-          total,
+          totalPrecio,
           totalCarrito,
     }}
     >
