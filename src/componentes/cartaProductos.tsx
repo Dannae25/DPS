@@ -19,17 +19,15 @@ export default function CartaProductos({ producto, agregar }: Props) {
 
   return (
     <article className="card card-side flex flex-col md:flex-row bg-base-300 shadow-sm border border-base-300 overflow-hidden">
-      <figure className="w-full md:w-56 flex-shrink-0 bg-white">
-        <div className="relative aspect-[4/3] w-full ">
-          <Image
-            src={producto.urlImage}
-            alt={producto.titulo}
-            fill
-            className="object-contain"
-            sizes="(max-width: 768px) 100vw, 224px"
-          />
-        </div>
-      </figure>
+    <figure className="relative w-full aspect-[4/3] md:aspect-auto md:basis-1/2 md:shrink-0 bg-white">
+  <Image
+    src={producto.urlImage}
+    alt={producto.titulo}
+    fill
+    className="object-contain "
+    sizes="(max-width: 768px) 100vw, 40vw"
+  />
+</figure>
 
       <div className="card-body p-4 flex flex-col justify-between overflow-hidden">
         <div>
