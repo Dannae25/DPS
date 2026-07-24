@@ -1,0 +1,73 @@
+"use client"
+
+import Link from "next/link";
+import DetallesCarrito from "@/componentes/DetallesCarrito";
+import { useCart } from "@/context/cartContex";
+
+export default function PaginaCarrito() {
+  const { cartas, sumarCantidad, restarCantidad, eliminarProducto, limpiarCarrito, totalPrecio } = useCart();
+
+  if (cartas.length === 0) {
+    return (
+      <div className="mx-auto max-w-2xl px-4 py-16 text-center">
+        <p className="text-stone-600">Tu carrito está vacío.</p>
+        <Link href="/" className="mt-3 inline-block text-sm font-medium text-stone-800 underline">
+          Volver al catálogo
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-4 py-10">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <p className="text-sm uppercase tracking-[0.3em] text-stone-500">Carrito</p>
+          <h1 className="text-2xl font-semibold text-stone-800">Tus productos</h1>
+        </div>
+        <button
+          onClick={limpiarCarrito}
+          className="text-sm font-medium text-red-600 underline"
+        >
+          Vaciar carrito
+        </button>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+        <section className="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
+          {cartas.map((elemento) => (
+            <DetallesCarrito
+              key={elemento.id}
+              elemento={elemento}
+              alIncrementar={sumarCantidad}
+              alDecrementar={restarCantidad}
+              alEliminar={eliminarProducto}
+            />
+          ))}
+        </section>
+
+        <aside className="rounded-2xl border border-stone-200 bg-stone-50 p-5 shadow-sm">
+          <h2 className="text-lg font-semibold text-stone-800">Resumen</h2>
+          <div className="mt-4 flex items-center justify-between text-sm text-stone-600">
+            <span>Subtotal</span>
+            <span>${totalPrecio.toFixed(2)}</span>
+          </div>
+          <div className="mt-2 flex items-center justify-between text-sm text-stone-600">
+            <span>Envío</span>
+            <span>Gratis</span>
+          </div>
+          <div className="mt-4 flex items-center justify-between border-t border-stone-200 pt-4 font-semibold text-stone-800">
+            <span>Total</span>
+            <span>${totalPrecio.toFixed(2)}</span>
+          </div>
+          <Link href="/" className="mt-6 inline-flex w-full justify-center rounded-lg bg-stone-900 px-4 py-2 text-sm font-semibold text-white">
+            Seguir comprando
+          </Link>
+          <Link href="/" className="mt-6 inline-flex w-full justify-center rounded-lg bg-stone-900 px-4 py-2 text-sm font-semibold text-white">
+          Comprar ahora
+          </Link>
+        </aside>
+      </div>
+    </main>
+  );
+}
