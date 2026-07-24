@@ -1,5 +1,5 @@
 import { Productos } from "../types/productos";
-import  CartaProductos from "./CartaProductos";
+import  CartaProductos from "./cartaProductos";
 
 
 interface Props {
