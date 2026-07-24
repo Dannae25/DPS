@@ -3,7 +3,7 @@
 import {createContext,useContext,useState,useEffect,ReactNode,} from "react";
 import { toast } from "sonner";
 import { Usuario } from "@/types/productos";
-import { usuarioPrueba } from "@/data/laptop";
+//import { usuarioPrueba } from "@/data/laptop";
 
 const CLAVE_SESION = "ecommerce-laptop-sesion";
 const CLAVE_USUARIOS = "ecommerce-laptop-usuarios";
@@ -25,10 +25,10 @@ export function ProveedorAuth({ children }: { children: ReactNode }) {
     const sesionGuardada = localStorage.getItem(CLAVE_SESION);
     if (sesionGuardada) setUsuario(JSON.parse(sesionGuardada));
 
-    const usuariosGuardados = localStorage.getItem(CLAVE_USUARIOS);
-    if (!usuariosGuardados) {
-      localStorage.setItem(CLAVE_USUARIOS, JSON.stringify([usuarioPrueba]));
-    }
+    //const usuariosGuardados = localStorage.getItem(CLAVE_USUARIOS);
+    //if (!usuariosGuardados) {
+     // localStorage.setItem(CLAVE_USUARIOS, JSON.stringify([usuarioPrueba]));
+    //}
   }, []);
 
   function obtenerUsuarios(): Usuario[] {

@@ -69,13 +69,14 @@ export default function PaginaCarrito() {
     });
 
     if(enviar){
-      toast.success("Factura enviada a tu correo eléctronico");
+    toast.success("¡Compra confirmada! Revisa tu correo eléctronico y tus descargas.");
     }else{
       toast.error("La factura generada pero no se pudo enviar al correo.")
     }
     limpiarCarrito();
     setProcesando(false);
     router.push(`/`)
+    
 
   
   }
@@ -145,7 +146,7 @@ export default function PaginaCarrito() {
           onClick={ConfirmarCompra}
           disabled={procesando}
           className="mt-6 inline-flex w-full justify-center rounded-lg bg-stone-900 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">
-      {procesando ? "Generando..." : usuario ? "Comprar ahora" : "Comprar ahora"}
+      {procesando ? "Generando..." : usuario ? "Comprar ahora" : "Comprar ahora" }
     </button>
         </aside>
       </div>

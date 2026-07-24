@@ -28,7 +28,7 @@ const cerrarDropdown = () => {
                 height={50}
                 className="h-8 md:h-10 w-8 md:w-10 object-contain"
               />
-              <span className="text-base md:text-xl font-semibold">LaptopFriend</span>
+              <span className="text-base md:text-xl font-semibold tracking-[0.50em]">LaptopFriend</span>
             </Link>
           </div>
           <div className="flex-none gap-4 md:gap-4 ">
@@ -49,7 +49,7 @@ const cerrarDropdown = () => {
                   <span className="text-sm md:text-lg font-bold">{totalCarrito}</span> 
                   <span className="text-sm md:text-green-600">Subtotal : ${totalPrecio.toFixed(2)}</span>
                   <div className="card-actions ">
-                  <Link href="/cart" className="btn btn-error btn-block btn-sm font-bold" onClick={cerrarDropdown}>
+                  <Link href="/cart" className="btn btn-error btn-block btn-sm font-bold hover:bg-gray-600 " onClick={cerrarDropdown}>
                   Ver Carrito
                 </Link>
                 </div>
@@ -69,7 +69,7 @@ const cerrarDropdown = () => {
                 Hola {usuario.nombre}
               </li>
               <li>
-                <button className="btn btn-error w-25 text-left" onClick={() => {cerrarSesion(); cerrarDropdown();}}>
+                <button className="btn btn-error w-25 text-left hover:bg-gray-600" onClick={() => {cerrarSesion(); cerrarDropdown();}}>
                   Cerrar Sesión
                 </button>
               </li>

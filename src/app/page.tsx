@@ -61,7 +61,7 @@ export default function Home() {
 
   return (
   <div className="max-w-12xl mx-auto px-4 py-6 bg-gray-300">
-      <h1 className="text-2xl font-bold mb-1">Catálogo de LaptopFriend</h1>
+      <h1 className="text-2xl font-bold mb-1 tracking-[0.100em]">Catálogo de LaptopFriend</h1>
       <p className="text-sm text-base-content/60 mb-6">
         Hay {filtrarProductos.length} producto(s)
       </p>
