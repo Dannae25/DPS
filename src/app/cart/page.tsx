@@ -8,6 +8,8 @@ import Link from "next/link";
 import DetallesCarrito from "@/componentes/DetallesCarrito";
 import { useCart } from "@/context/cartContex";
 import { GenerarFactura } from "@/lib/GenerarFactura";
+import { EnviarCorreo } from "@/lib/EnviarCorreo";
+import { toast } from "sonner";
 
 export default function PaginaCarrito() {
   const { cartas, sumarCantidad, restarCantidad, eliminarProducto, limpiarCarrito, totalPrecio } = useCart();
@@ -18,16 +20,18 @@ export default function PaginaCarrito() {
 
   //CONECTAR EL BOTON DE COMPRAR CON EL PDF
   async function ConfirmarCompra() {
+   
     if(cartas.length === 0)return;
 
        setProcesando(true);
 
     const generarId = `${Date.now()}`;
+    const correoDePrueba = "danae.g2507@gmail.com"
     //GENERAR EL PDF EN EL NAVEGADOR
     const pdf = await GenerarFactura({
       generarId,
       nombreCliente: "Cliente de prueba",
-      emailCliente: "Correo de prueba hasta que haga el login",
+      emailCliente: correoDePrueba,
       elemento: cartas,
       totalPrecio,
     });
@@ -36,7 +40,7 @@ export default function PaginaCarrito() {
     const mostrarFcatura = {
       generarId,
       nombreCliente: "Cliente de prueba",
-      emailCliente: "Correo de prueba hasta que haga el login",
+      emailCliente: correoDePrueba,
       elemento: cartas,
       totalPrecio,
       date: new Date().toISOString(),
@@ -48,10 +52,24 @@ export default function PaginaCarrito() {
 
     // Descargamos el PDF localmente.
     pdf.save(`factura-${generarId}.pdf`);
+
+    //ENVIAR FACTURA POR CORREO
+    
+    const enviar = await EnviarCorreo({
+      email: correoDePrueba,
+      nombre:"Cliente Prueba",
+      generarId,
+      totalPrecio,
+    });
+
+    if(enviar){
+      toast.success("Factura enviada a tu correo eléctronico");
+    }else{
+      toast.error("La factura generada pero no se pudo enviar al correo.")
+    }
     limpiarCarrito();
     setProcesando(false);
-    router.push("/"); // o a donde quieras mandarla después
-
+    router.push(`/`)
 
   
   }
