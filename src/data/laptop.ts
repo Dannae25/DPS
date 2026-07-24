@@ -236,3 +236,11 @@ export const productos: Productos[] = [
 
 ];
 
+export const usuarioPrueba = {
+  id: 1,
+  nombre: "Daniela",
+  email: "danae.g2507@gmail.com",
+  password: "desafio1"
+
+}
+
