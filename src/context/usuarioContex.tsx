@@ -38,7 +38,7 @@ export function ProveedorAuth({ children }: { children: ReactNode }) {
   function login(email: string, password: string): boolean {
     const usuarios = obtenerUsuarios();
     const buscarUsuario = usuarios.find(
-      (u) => u.email === email && u.password === password
+      (usuario) => usuario.email === email && usuario.password === password
     );
     if (!buscarUsuario) {
       toast.error("Correo o contraseña incorrectos");
@@ -57,7 +57,7 @@ export function ProveedorAuth({ children }: { children: ReactNode }) {
 
   function registrar(nombre: string, email: string, password: string): boolean {
     const usuarios = obtenerUsuarios();
-    if (usuarios.some((u) => u.email === email)) {
+    if (usuarios.some((usuario) => usuario.email === email)) {
       toast.error("Ya existe una cuenta con ese correo");
       return false;
     }

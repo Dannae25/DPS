@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {Toaster} from "sonner";
 import { ProveedorCarrito } from "@/context/cartContex";
+import { ProveedorAuth } from "@/context/usuarioContex";
 import Navbar from "@/componentes/Navbar";
 import Footer from "@/componentes/Footer"
 
@@ -32,11 +33,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col" >
+        <ProveedorAuth>
         <ProveedorCarrito>
         <Navbar />
-        {children}
+        <main className="flex-1">{children}</main>
         <Toaster position="top-center" richColors />
         </ProveedorCarrito>
+        </ProveedorAuth>
         <Footer />
 
       </body>

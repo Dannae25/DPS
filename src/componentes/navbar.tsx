@@ -3,12 +3,14 @@
 import Image from "next/image"
 import Link from "next/link";
 import {useCart} from "@/context/cartContex"
+import { useAuth } from "@/context/usuarioContex";
 
 export default function Navbar (){
 
   //logica de sumar cantidades en el carrito
   //utilito totalCarrito para reutilizar el dódigo del CartContext
 const {totalCarrito, totalPrecio} = useCart();
+const {usuario, cerrarSesion} = useAuth();
 
 const cerrarDropdown = () => {
   const elementoActivo = document.activeElement as HTMLElement | null;
@@ -54,24 +56,32 @@ const cerrarDropdown = () => {
               </div>
             </div>
             </div>
-            <div className="dropdown dropdown-end">
-              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle btn-sm md:btn-md avatar ">
-                <div className="w-8 md:w-10 rounded-full " >
-                  <Image
-                    alt="Sesion de cuenta"
-                    src="/recursos/icono.png"
-                    width={50}
-                    height={50}
-                  />
-                </div>
+                {usuario ? (
+          // Si existe la sesión: muestra el avatar con dropdown de "Cerrar Sesión" conectado
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle btn-sm md:btn-md avatar">
+              <div className="w-8 md:w-10 rounded-full">
+                <Image alt="Sesión de cuenta" src="/recursos/icono.png" width={50} height={50} />
               </div>
-              <ul
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-40 md:w-52 p-2 shadow">
-                <li><a>Cerrar Sesión</a></li>
-              </ul>
             </div>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-40 md:w-52 p-2 shadow">
+              <li className="px-2 py-1 text-sm text-stone-1000 pointer-events-none">
+                Hola {usuario.nombre}
+              </li>
+              <li>
+                <button className="btn btn-error w-25 text-left" onClick={() => {cerrarSesion(); cerrarDropdown();}}>
+                  Cerrar Sesión
+                </button>
+              </li>
+            </ul>
           </div>
-        </div>
-    );
-    
-};
+        ) : (
+          // Si no hay sesión  sin dropdown
+          <Link href="/login" className="btn btn-ghost btn-sm md:btn-md text-error hover:bg-white">
+            Iniciar sesión
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}

@@ -24,8 +24,8 @@ export default function Footer (){
                         <a className="link link-hover text-xs md:text-sm" href="https://www.flaticon.com/" target="_blank">
                             Iconos creados por: {"Flaticon"}
                         </a>
-                        <a className="link link-hover text-xs md:text-sm">Privacy policy</a>
-                        <a className="link link-hover text-xs md:text-sm">Cookie policy</a>
+                        <a className="link link-hover text-xs md:text-sm">Politica de privacidad</a>
+                        
                     </nav>
                 </div>
 
