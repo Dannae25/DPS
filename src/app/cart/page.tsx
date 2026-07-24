@@ -1,11 +1,60 @@
 "use client"
 
+//prueba
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
 import Link from "next/link";
 import DetallesCarrito from "@/componentes/DetallesCarrito";
 import { useCart } from "@/context/cartContex";
+import { GenerarFactura } from "@/lib/GenerarFactura";
 
 export default function PaginaCarrito() {
   const { cartas, sumarCantidad, restarCantidad, eliminarProducto, limpiarCarrito, totalPrecio } = useCart();
+  //prueba 
+  const router = useRouter();
+  const [procesando, setProcesando] = useState(false);
+
+
+  //CONECTAR EL BOTON DE COMPRAR CON EL PDF
+  async function ConfirmarCompra() {
+    if(cartas.length === 0)return;
+
+       setProcesando(true);
+
+    const generarId = `${Date.now()}`;
+    //GENERAR EL PDF EN EL NAVEGADOR
+    const pdf = await GenerarFactura({
+      generarId,
+      nombreCliente: "Cliente de prueba",
+      emailCliente: "Correo de prueba hasta que haga el login",
+      elemento: cartas,
+      totalPrecio,
+    });
+
+    //Guardo en el LocalStore para mostrar luego en el archivo donde irá la simulación 
+    const mostrarFcatura = {
+      generarId,
+      nombreCliente: "Cliente de prueba",
+      emailCliente: "Correo de prueba hasta que haga el login",
+      elemento: cartas,
+      totalPrecio,
+      date: new Date().toISOString(),
+    };
+    localStorage.setItem(
+      `invoice-${generarId}`,
+      JSON.stringify(mostrarFcatura)
+    );
+
+    // Descargamos el PDF localmente.
+    pdf.save(`factura-${generarId}.pdf`);
+    limpiarCarrito();
+    setProcesando(false);
+    router.push("/"); // o a donde quieras mandarla después
+
+
+  
+  }
 
   if (cartas.length === 0) {
     return (
@@ -63,9 +112,13 @@ export default function PaginaCarrito() {
           <Link href="/" className="mt-6 inline-flex w-full justify-center rounded-lg bg-stone-900 px-4 py-2 text-sm font-semibold text-white">
             Seguir comprando
           </Link>
-          <Link href="/" className="mt-6 inline-flex w-full justify-center rounded-lg bg-stone-900 px-4 py-2 text-sm font-semibold text-white">
-          Comprar ahora
-          </Link>
+          <button
+          onClick={ConfirmarCompra}
+          disabled={procesando}
+          className="mt-6 inline-flex w-full justify-center rounded-lg bg-stone-900 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50"
+    >
+      {procesando ? "Generando..." : "Comprar ahora"}
+    </button>
         </aside>
       </div>
     </main>
