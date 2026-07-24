@@ -61,7 +61,7 @@ function agregarCarrito (producto: Productos){
         }
         return [...prev, { ...producto, cantidad: 1 }];
     });
-    toast.success(`"${producto.titulo}" Agregado al carrito LaptopFriend ✅`);
+    toast.success(`"${producto.titulo}" Agregado al carrito ✅`);
 
 }
 
@@ -91,7 +91,7 @@ function restarCantidad(id: number){
     function eliminarProducto(id: number){
         const elemento = cartas.find((i) => i.id === id);
         setCartas((prev) => prev.filter((elemento) => elemento.id !== id));
-        if(elemento) toast.info(`"${elemento.titulo}" Eliminando producto del carrito ⛔`)
+        if(elemento) toast.info(`"${elemento.titulo}" Eliminando producto del carrito`)
 
     }
 

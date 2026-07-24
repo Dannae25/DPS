@@ -12,6 +12,7 @@ interface Props {
 export default function CartaProductos({ producto, agregar }: Props) {
   const [mostrarCompleta, setMostrarCompleta] = useState(false);
 
+  //Agrego la variable para la funcionalidad de leer más
   const descripcionCorta =
     producto.descripcion.length > 100
       ? `${producto.descripcion.slice(0, 100)}...`
@@ -38,6 +39,7 @@ export default function CartaProductos({ producto, agregar }: Props) {
           <h2 className="card-title text-base">{producto.titulo}</h2>
           <p className="text-xs text-base-content/100">{producto.marca}</p>
 
+          {/* Diseño y logica para que funcione la acción*/}
           <div className="text-sm text-base-content/75 mt-2">
             <div
               className={
@@ -61,6 +63,7 @@ export default function CartaProductos({ producto, agregar }: Props) {
               </button>
             )}
           </div>
+          {/*Fin de diseño y logica de la acción leer mas y menos */}
         </div>
 
         <div className="card-actions items-center justify-between mt-3">

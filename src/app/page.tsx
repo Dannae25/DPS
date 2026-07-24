@@ -8,8 +8,9 @@ import { useState } from "react";
 import { productos } from "@/data/laptop";
 import { useCart } from "@/context/cartContex";
 
-import ProductosFiltrados from "@/componentes/ProductosFiltrados";
+
 import FiltroCategorias from "@/componentes/FiltroCategorias";
+import ProductosFiltrados from "@/componentes/ProductosFiltrados";
 
 
 

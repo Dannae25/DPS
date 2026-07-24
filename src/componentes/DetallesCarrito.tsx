@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { carritoItem } from "@/types/productos";
 
+
 // mi caja de props que recibe datos y funciones para usarlas
 interface Props {
     elemento: carritoItem;
@@ -28,15 +29,15 @@ export default function DetallesCarrito ({elemento, alIncrementar, alDecrementar
     <div className="flex items-center gap-2">
         <button
         onClick={() => alDecrementar(elemento.id)}
-        className="w-7 h-7 rounded-full border border-stone-300"
+        className="w-10 h-7 rounded-full border border-stone-300 font-bold"
         aria-label="Disminuir cantidad"
         >
-        
+        -
         </button>
         <span className="w-5 text-center">{elemento.cantidad}</span>
         <button
         onClick={() => alIncrementar(elemento.id)}
-        className="w-7 h-7 rounded-full border border-stone-300"
+        className="w-10 h-7 rounded-full border border-stone-300 font-bold"
         aria-label="Aumentar cantidad"
         >
         +

@@ -29,7 +29,7 @@ export default function FiltroCategorias({categoria, marca, seleccionarCategoria
       </div>
 
       <div className="mb-6">
-        <h3 className="text-xs font-semibold text-base-content/60 mb-2 ">
+        <h3 className="text-xs font-semibold text-base-content/60 mb-2y ">
           CATEGORIAS
         </h3>
         <div className="flex flex-col gap-2">
