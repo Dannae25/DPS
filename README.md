@@ -1,4 +1,7 @@
-# LaptopFriend — Desafío Práctico E-commerce
+# LaptopFriend — Desafío Práctico E-commerce 
+**Estudiante de ingeniería en ciencias de computación**\
+Daniela Esmeralda Gutiérrez López \
+*Carnet: GL210850*
 
 Primer desafio  para la asignatura Diseño y Programación de Software Multiplataforma (DPS).\
 Hecho con React, TypeScript y Next.js.
@@ -16,7 +19,7 @@ Hecho con React, TypeScript y Next.js.
    - npm install 
  
 
-3. *IMPORTANTE* Si clonas el repositorio y quieres que el envío de correo funcione de verdad y no modo simulado, crea una     cuenta gratuita en emailjs.com, configura un servicio y una plantilla, y crea un archivo *.env.local* en la raíz de tu     proyecto con lo siguiente:
+3. ***IMPORTANTE*** Si clonas el repositorio y quieres que el envío de correo funcione de verdad y no modo simulado, crea una     cuenta gratuita en emailjs.com, configura un servicio y una plantilla, y crea un archivo *.env.local* en la raíz de tu     proyecto con lo siguiente:
    
    NEXT_PUBLIC_EMAILJS_SERVICE_ID=tu_service_id \
    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=tu_template_id \
