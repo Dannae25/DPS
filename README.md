@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LaptopFriend — Desafío Práctico E-commerce
 
-## Getting Started
+Primer desafio  para la asignatura Diseño y Programación de Software Multiplataforma (DPS).
+Hecho con React, TypeScript y Next.js.
 
-First, run the development server:
+## Instalación
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clona el repositorio:
+   \`\`\`bash
+   git clone https://github.com/tu-usuario/tu-repo.git
+   cd tu-repo
+   \`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instala las dependencias:
+   \`\`\`bash
+   npm install 
+   \`\`\`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. (IMPORTANTE) Si clonas el repositorio y quieres que el envío de correo funcione de verdad y no modo simulado, crea una cuenta gratuita en emailjs.com, configura un
+   servicio y una plantilla, y crea un archivo `.env.local` en la raíz de tu proyecto con lo siguiente:
+   \`\`\`
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=tu_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=tu_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=tu_public_key
+   \`\`\`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Corre el proyecto en modo desarrollo:
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
-## Learn More
+5. Abre [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+## Despliegue 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El proyecto está publicado en Netlify, con despliegue continuo conectado
+al repositorio de GitHub — cada \`push\` a \`main\` genera un nuevo despliegue
+automáticamente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Sitio publicado:** https://primer-desafiomultiplataformas.netlify.app/
 
-## Deploy on Vercel
+## Video demo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Enlace de video: ** 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Cómo probar la funcionalidad de hacer una compra de un producto 
+
+No hay usuario de prueba precargado. Debes registrarte con cualquier correo y contraseña para iniciar sesión y comprar.
+
+## Tecnologías usadas
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS + DaisyUI
+- Context API para estado global (carrito y autenticación)
+- jsPDF para generación de facturas
+- EmailJS para envío de correo
+- Sonner para las alertas 
