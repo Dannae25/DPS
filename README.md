@@ -6,28 +6,27 @@ Hecho con React, TypeScript y Next.js.
 ## Instalación
 
 1. Clona el repositorio:
-   \`\`\`bash
+  
    git clone https://github.com/tu-usuario/tu-repo.git
    cd tu-repo
-   \`\`\`
+  
 
 2. Instala las dependencias:
-   \`\`\`bash
-   npm install 
-   \`\`\`
+  
+   - npm install 
+ 
 
-3. (IMPORTANTE) Si clonas el repositorio y quieres que el envío de correo funcione de verdad y no modo simulado, crea una cuenta gratuita en emailjs.com, configura un
-   servicio y una plantilla, y crea un archivo `.env.local` en la raíz de tu proyecto con lo siguiente:
-   \`\`\`
+3. *IMPORTANTE* Si clonas el repositorio y quieres que el envío de correo funcione de verdad y no modo simulado, crea una     cuenta gratuita en emailjs.com, configura un servicio y una plantilla, y crea un archivo *.env.local* en la raíz de tu     proyecto con lo siguiente:
+   
    NEXT_PUBLIC_EMAILJS_SERVICE_ID=tu_service_id
    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=tu_template_id
    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=tu_public_key
-   \`\`\`
+   
 
 4. Corre el proyecto en modo desarrollo:
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+  
+   - npm run dev
+ 
 
 5. Abre [http://localhost:3000](http://localhost:3000)
 
@@ -41,7 +40,7 @@ automáticamente.
 
 ## Video demo
 
-**Enlace de video: ** 
+**Enlace de video:** https://youtu.be/-mApJ5q6wDk
 
 ## Cómo probar la funcionalidad de hacer una compra de un producto 
 
